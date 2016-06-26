@@ -109,7 +109,7 @@
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Network/networkInterfaces",
-      "name": "[concat(variables('nicName'),copyIndex())]",
+      "name": "[concat('nic',copyIndex())]",
       "location": "[resourceGroup().location]",
       "copy": { 
         "name": "nicLoop", 
@@ -188,7 +188,7 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(variables('nicName'),copyIndex())]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat('nic',copyIndex())]"
             }
           ]
         },
