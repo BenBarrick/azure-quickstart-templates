@@ -14,6 +14,13 @@
         "description": "Password for the Virtual Machine."
       }
     },
+    "numberofInstances": {
+      "type": "int",
+      "defaultValue": 2,
+      "metadata": {
+          "description": "Number of VMs to deploy"
+      }
+    },
     "dnsLabelPrefix": {
       "type": "string",
       "metadata": {
@@ -82,6 +89,7 @@
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[variables('virtualNetworkName')]",
       "location": "[resourceGroup().location]",
+      
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
@@ -101,8 +109,12 @@
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Network/networkInterfaces",
-      "name": "[variables('nicName')]",
+      "name": "[concat(variables('nicName'),copyIndex())]",
       "location": "[resourceGroup().location]",
+      "copy": { 
+        "name": "nicLoop", 
+        "count": "[parameters('numberofInstances')]" 
+      }, 
       "dependsOn": [
         "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))]",
         "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
@@ -127,8 +139,12 @@
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[variables('vmName')]",
+      "name": "[concat(variables('vmName'),copyIndex())]",
       "location": "[resourceGroup().location]",
+      "copy": { 
+        "name": "VirtualMachineLoop", 
+        "count": "[parameters('numberofInstances')]" 
+      },
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
         "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
@@ -152,7 +168,7 @@
           "osDisk": {
             "name": "osdisk",
             "vhd": {
-              "uri": "[concat('http://',variables('storageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('OSDiskName'),'.vhd')]"
+              "uri": "[concat('http://',variables('storageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('OSDiskName'), copyIndex(),'.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
@@ -172,7 +188,7 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName'))]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(variables('nicName'),copyIndex())]"
             }
           ]
         },
