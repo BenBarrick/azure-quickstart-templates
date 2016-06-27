@@ -5,8 +5,8 @@
     "vmSku": {
       "value": "Standard_A1"
     },
-    "ubuntuOSVersion": {
-      "value": "15.10"
+    "rhelOSVersion": {
+      "value": "7.2"
     },
     "vmssName": {
       "value": "GEN-UNIQUE-32"
@@ -15,7 +15,7 @@
       "value": 5
     },
     "adminUsername": {
-      "value": "ubuntu"
+      "value": "rhel"
     },
     "adminPassword": {
       "value": "GEN-PASSWORD"
