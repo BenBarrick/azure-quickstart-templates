@@ -9,7 +9,7 @@
       "value": "15.10"
     },
     "vmssName": {
-      "value": "GEN-UNIQUE-32"
+      "value": "customscript"
     },
     "instanceCount": {
       "value": 5
