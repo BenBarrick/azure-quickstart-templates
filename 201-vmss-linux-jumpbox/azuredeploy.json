@@ -79,8 +79,8 @@
     "nicName": "[concat(variables('namingInfix'), 'nic')]",
     "ipConfigName": "[concat(variables('namingInfix'), 'ipconfig')]",
     "osType": {
-      "publisher": "OpenLogic",
-      "offer": "RHELServer",
+      "publisher": "RedHat",
+      "offer": "RHEL",
       "sku": "[parameters('rhelOSVersion')]",
       "version": "latest"
     },
