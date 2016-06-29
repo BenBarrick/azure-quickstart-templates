@@ -55,7 +55,7 @@
       "defaultValue": ["https://github.com/MyProject/Archive/MyPythonScript.py"]
         }
   }
-  },
+  }
   "variables": {
     "storageAccountType": "Standard_LRS",
     "namingInfix": "[toLower(substring(concat(parameters('vmssName'), uniqueString(resourceGroup().id)), 0, 9))]",
