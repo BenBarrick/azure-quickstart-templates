@@ -51,7 +51,7 @@
       "defaultValue": "sh script.sh"
     },
     "fileUris": {
-      "type": "array",
+      "type": "Array",
       "defaultValue": ["https://github.com/MyProject/Archive/MyPythonScript.py"]
         }
   }
