@@ -282,11 +282,11 @@
                 }
               },{
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(variables('vmssName'), variables('extensionName'))]",
+      "name": "[concat(parameters('vmssName'), variables('extensionName'))]",
       "apiVersion": "[variables('apiVersion')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', variables('vmssName'))]"
+        "[concat('Microsoft.Compute/virtualMachines/', parameters('vmssName'))]"
       ],
       "properties": {
         "publisher": "Microsoft.OSTCExtensions",
