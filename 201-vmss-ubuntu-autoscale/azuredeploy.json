@@ -52,6 +52,7 @@
     },
         "fileUris": {
             "type": "Array"
+        }
   },
   "variables": {
     "storageAccountType": "Standard_LRS",
