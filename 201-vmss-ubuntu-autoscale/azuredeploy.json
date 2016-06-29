@@ -302,7 +302,7 @@
         "typeHandlerVersion": "1.4",
         "autoUpgradeMinorVersion": true,
         "settings": {
-          "fileUris": "https://github.com/MyProject/Archive/MyPythonScript.py",
+          "fileUris": "https://raw.githubusercontent.com/BenBarrick/azure-quickstart-templates/master/101-acs-swarm/azuredeploy.json",
           "commandToExecute": "[parameters('commandToExecute')]"
         },
         "protectedSettings": {
