@@ -49,7 +49,9 @@
     "commandToExecute": {
       "type": "string",
       "defaultValue": "sh script.sh"
-    }
+    },
+        "fileUris": {
+            "type": "Array"
   },
   "variables": {
     "storageAccountType": "Standard_LRS",
