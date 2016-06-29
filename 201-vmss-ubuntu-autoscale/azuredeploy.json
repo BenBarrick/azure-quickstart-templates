@@ -48,7 +48,7 @@
     },
     "commandToExecute": {
       "type": "string",
-      "value": "sh script.sh"
+      "defaultValue": "sh script.sh"
     }
   },
   "variables": {
