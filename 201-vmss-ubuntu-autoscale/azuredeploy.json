@@ -50,9 +50,9 @@
       "type": "string",
       "defaultValue": "sh script.sh"
     },
-        "fileUris": {
-            "type": "array"
-            "value": "https://github.com/MyProject/Archive/MyPythonScript.py"
+    "fileUris": {
+      "type": "array"
+      "value": ["https://github.com/MyProject/Archive/MyPythonScript.py"
             ]
         }
   },
