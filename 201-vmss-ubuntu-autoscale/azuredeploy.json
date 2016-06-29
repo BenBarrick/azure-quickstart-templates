@@ -302,7 +302,7 @@
         "typeHandlerVersion": "1.4",
         "autoUpgradeMinorVersion": true,
         "settings": {
-          "fileUris": "[split(parameters('fileUris'), ' ')]",
+          "fileUris": "[split(parameters('fileUris'), ' ')[0]]",
           "commandToExecute": "[parameters('commandToExecute')]"
         },
         "protectedSettings": {
