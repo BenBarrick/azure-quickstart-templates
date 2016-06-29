@@ -280,7 +280,22 @@
                     "storageAccountEndPoint": "https://core.windows.net"
                   }
                 }
-              }
+              },
+               "type": "Microsoft.Compute/virtualMachines/extensions",
+               "name": "[concat(variables('vmName'), variables('extensionName'))]",
+               "apiVersion": "[variables('apiVersion')]",
+               "location": "[resourceGroup().location]",
+               "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+      ],
+      "properties": {
+        "publisher": "Microsoft.OSTCExtensions",
+        "type": "CustomScriptForLinux",
+        "typeHandlerVersion": "1.4",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "fileUris": "[split(parameters('fileUris'), ' ')]",
+          "commandToExecute": "[parameters('commandToExecute')]"
             ]
           }
         }
