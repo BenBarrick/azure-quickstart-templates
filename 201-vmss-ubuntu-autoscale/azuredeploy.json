@@ -54,7 +54,6 @@
       "type": "Array",
       "defaultValue": ["https://github.com/MyProject/Archive/MyPythonScript.py"]
         }
-  }
   },
   "variables": {
     "storageAccountType": "Standard_LRS",
