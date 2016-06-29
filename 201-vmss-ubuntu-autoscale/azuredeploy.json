@@ -45,6 +45,10 @@
       "metadata": {
         "description": "Admin password on all VMs."
       }
+    },
+    "commandToExecute": {
+      "type": "string",
+      "value": "sh script.sh"
     }
   },
   "variables": {
@@ -283,7 +287,7 @@
               },{
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "vmssextension",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2015-06-15",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', parameters('vmssName'))]"
