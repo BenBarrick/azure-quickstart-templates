@@ -51,9 +51,8 @@
       "defaultValue": "sh script.sh"
     },
         "fileUris": {
-            "type": "Array"
-            "value": [
-                "https://iaasv2tempstoragech.blob.core.windows.net/vmextensionstemporary-000300009c06a9b4-20160629031327590/custonscript.json?sv=2015-04-05&sr=c&sig=bEU71E9Xv5Ksu%2Bj%2BS4FY26hJ6S96AuGpSW104cbyfS4%3D&se=2016-06-30T03%3A13%3A27Z&sp=rw"
+            "type": "array"
+            "value": ["https://iaasv2tempstoragech.blob.core.windows.net/vmextensionstemporary-000300009c06a9b4-20160629031327590/custonscript.json?sv=2015-04-05&sr=c&sig=bEU71E9Xv5Ksu%2Bj%2BS4FY26hJ6S96AuGpSW104cbyfS4%3D&se=2016-06-30T03%3A13%3A27Z&sp=rw"
             ]
         }
   },
