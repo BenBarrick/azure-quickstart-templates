@@ -280,23 +280,22 @@
                     "storageAccountEndPoint": "https://core.windows.net"
                   }
                 }
-              },{ "apiVersion": "2015-05-01-preview",
+              },{
             "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[concat(variables('vmNamePrefix'),'0','/Install')]",
-            "location": "[resourceGroup().location]",
-            "dependsOn": ["[concat('Microsoft.Compute/virtualMachines/', variables('vmNamePrefix'),'0')]"],
+            "name": "[concat(parameters('vmName'),'/CustomScriptForLinux')]",
+            "apiVersion": "2015-06-15",
+            "location": "[parameters('location')]",
             "properties": {
                 "publisher": "Microsoft.OSTCExtensions",
                 "type": "CustomScriptForLinux",
                 "typeHandlerVersion": "1.4",
+                "autoUpgradeMinorVersion": true,
                 "settings": {
-                "fileUris": [
-                    "[concat('https://raw.githubusercontent.com/tanewill/tanewill/Ubuntu/DeployMultiVM/',variables('executeScript'))]"
-                ],
-                "commandToExecute": "[concat('bash ',variables('executeScript'),' 2>&1 & disown')]"
+                    "fileUris": "[parameters('fileUris')]",
+                    "commandToExecute": "[parameters('commandToExecute')]"
                 }
             }
-            }
+        }
             ]
           }
         }
