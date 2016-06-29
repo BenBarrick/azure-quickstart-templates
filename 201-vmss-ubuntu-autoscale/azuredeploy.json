@@ -282,7 +282,7 @@
                 }
               },{
             "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[concat(parameters('vmName'),'/CustomScriptForLinux')]",
+            "name": "[concat(parameters('vmssName'),'/CustomScriptForLinux')]",
             "apiVersion": "2015-06-15",
             "location": "[parameters('location')]",
             "properties": {
