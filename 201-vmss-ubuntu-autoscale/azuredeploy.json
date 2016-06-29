@@ -282,7 +282,7 @@
                 }
               },{
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(parameters('vmssName'), variables('extensionName'))]",
+      "name": "vmssextension",
       "apiVersion": "[variables('apiVersion')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
