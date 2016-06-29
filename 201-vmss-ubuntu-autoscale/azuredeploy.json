@@ -52,7 +52,7 @@
     },
     "fileUris": {
       "type": "array",
-      "value": ["https://github.com/MyProject/Archive/MyPythonScript.py"
+      "defaultValue": ["https://github.com/MyProject/Archive/MyPythonScript.py"
             ]
         }
   },
