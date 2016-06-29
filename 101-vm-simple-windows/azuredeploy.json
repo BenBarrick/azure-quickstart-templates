@@ -57,6 +57,7 @@
     "vmStorageAccountContainerName": "vhds",
     "vmName": "SimpleWindowsVM",
     "vmSize": "Standard_D1",
+    "vmNamePrefix": "bbnew",
     "virtualNetworkName": "MyVNET",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
