@@ -302,7 +302,7 @@
         "typeHandlerVersion": "1.4",
         "autoUpgradeMinorVersion": true,
         "settings": {
-          "fileUris": "[split(parameters('fileUris'), ' ')[0]]",
+          "fileUris": "https://github.com/MyProject/Archive/MyPythonScript.py",
           "commandToExecute": "[parameters('commandToExecute')]"
         },
         "protectedSettings": {
