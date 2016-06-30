@@ -9,7 +9,7 @@
 				"description": "Size of VMs in the VM Scale Set."
 			}
 		},
-		"rhelOSVersion": {
+		"ubuntuOSVersion": {
 			"type": "string",
 			"defaultValue": "7.2",
 			"allowedValues": [
