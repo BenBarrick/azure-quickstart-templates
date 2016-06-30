@@ -12,10 +12,6 @@
 		"ubuntuOSVersion": {
 			"type": "string",
 			"defaultValue": "7.2",
-			"allowedValues": [
-				"7.2",
-				"6.7"
-			],
 			"metadata": {
 				"description": "The RHEL version for the VM. This will pick a fully patched image of this given RHEL version. Allowed values are: 15.10, 14.04.4-LTS."
 			}
