@@ -107,17 +107,25 @@
 		"storageApiVersion": "2015-06-15",
 		"insightsApiVersion": "2015-04-01"
 	},
-	"resources": [{
-		"publisher": "Microsoft.OSTCExtensions",
-		"type": "CustomScriptForLinux",
-		"typeHandlerVersion": "1.4",
-		"settings": {
+	"resources": [
+		{
+  		"type": "Microsoft.Compute/virtualMachines/extensions",
+		"name": "MyExtension",
+  		"apiVersion": "2015-05-01-preview",
+  		"location": "[parameters('location')]",
+  		"dependsOn": ["[concat('Microsoft.Compute/virtualMachines/',parameters('vmssName'))]"],
+  			"properties":{
+			"publisher": "Microsoft.OSTCExtensions",
+			"type": "CustomScriptForLinux",
+			"typeHandlerVersion": "1.4",
+			"settings": {
 			"fileUris": [
 				"http: //Yourstorageaccount.blob.core.windows.net/customscriptfiles/start.ps1"
 			],
 			"commandToExecute": "sh script.sh"
 		}
-	}, {
+	}, 
+	{
 		"type": "Microsoft.Network/virtualNetworks",
 		"name": "[variables('virtualNetworkName')]",
 		"location": "[resourceGroup().location]",
@@ -141,7 +149,7 @@
 		"apiVersion": "2015-05-01-preview",
 		"location": "[parameters('location')]",
 		"dependsOn": [
-			"[concat('Microsoft.Compute/virtualMachines/',parameters('vmName'))]"
+			"[concat('Microsoft.Compute/virtualMachines/',parameters('vmssName'))]"
 		],
 		"properties": {
 			"publisher": "Microsoft.Compute",
