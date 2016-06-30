@@ -80,8 +80,8 @@
 		"ipConfigName": "[concat(variables('namingInfix'), 'ipconfig')]",
 		"osType": {
 			"publisher": "Canonical",
-			"offer": "RHELServer",
-			"sku": "[parameters('rhelOSVersion')]",
+			"offer": "UbuntuServer",
+			"sku": "[parameters('ubuntuOSVersion')]",
 			"version": "latest"
 		},
 		"imageReference": "[variables('osType')]",
