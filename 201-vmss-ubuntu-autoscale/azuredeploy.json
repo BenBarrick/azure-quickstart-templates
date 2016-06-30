@@ -124,6 +124,7 @@
 			],
 			"commandToExecute": "sh script.sh"
 		}
+  			}
 	}, 
 	{
 		"type": "Microsoft.Network/virtualNetworks",
