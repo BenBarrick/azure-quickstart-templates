@@ -112,7 +112,7 @@
   		"type": "Microsoft.Compute/virtualMachines/extensions",
 		"name": "MyExtension",
   		"apiVersion": "2015-05-01-preview",
-  		"location": "[parameters('location')]",
+  		"location": "[resourceGroup().location]",
   		"dependsOn": ["[concat('Microsoft.Compute/virtualMachines/',parameters('vmssName'))]"],
   			"properties":{
 			"publisher": "Microsoft.OSTCExtensions",
@@ -148,7 +148,7 @@
 		"type": "Microsoft.Compute/virtualMachines/extensions",
 		"name": "MyCustomScriptExtension",
 		"apiVersion": "2015-05-01-preview",
-		"location": "[parameters('location')]",
+		"location": "[resourceGroup().location]",
 		"dependsOn": [
 			"[concat('Microsoft.Compute/virtualMachines/',parameters('vmssName'))]"
 		],
