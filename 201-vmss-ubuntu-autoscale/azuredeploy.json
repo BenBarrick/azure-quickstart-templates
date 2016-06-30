@@ -108,14 +108,14 @@
 		"insightsApiVersion": "2015-04-01"
 	},
 	"resources": [{
-		"publisher": "Microsoft.Compute",
-		"type": "CustomScriptExtension",
-		"typeHandlerVersion": "1.7",
+		"publisher": "Microsoft.OSTCExtensions",
+		"type": "CustomScriptForLinux",
+		"typeHandlerVersion": "1.4",
 		"settings": {
 			"fileUris": [
 				"http: //Yourstorageaccount.blob.core.windows.net/customscriptfiles/start.ps1"
 			],
-			"commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -start.ps1"
+			"commandToExecute": "sh script.sh"
 		}
 	}, {
 		"type": "Microsoft.Network/virtualNetworks",
